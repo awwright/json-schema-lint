@@ -1,5 +1,5 @@
 
-# JSON Schema Lint * implementation requirements
+# JSON Schema Lint - implementation requirements
 
 This is a listing of the feature requirements for this JSON Schema linter.
 
@@ -15,6 +15,7 @@ This is a listing of the feature requirements for this JSON Schema linter.
     * error: legal usage with no good reason for use (schemas that are always invalid, redundant keywords)
     * warning: nonportable behavior (different behavior between operating systems, etc), unknown keywords
     * info: problems not likely to impact validation, e.g. adherance to naming conventions
+    * compat: usage that is not reverse- and/or forward-compatible
 
 ## Schema tests
 
@@ -23,13 +24,13 @@ This is a listing of the feature requirements for this JSON Schema linter.
     * Duplicate keys
     * Unicode problems
     * Correct line endings
-* Verify known $schema & adherance to meta-schema
+* Verify known `"$schema"` & adherance to meta-schema
 * Verify URIrefs are consistent
 * Verify long-lived HTTP headers for remotely requested documents (if hyper-schema)
 * Check for redundant keywords
-    * keywords that don't fall in the listed "type"
-    * validation keywords used with "enum"
-    * keywords setting constraints for types not permitted by "type" (e.g. type:"string" with minimum)
+    * keywords that don't fall in the listed `"type"`
+    * validation keywords used with `"enum"`
+    * mutually exclusive keywords (empty `"oneOf"`/`"anyOf"`, `"maximum"` lower than `"minimum"`, etc)
 * relative URIRefs used without a URI base somewhere in the document
 * References to paths where a schema isn't expected
 * Unknown keywords
