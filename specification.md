@@ -20,18 +20,28 @@ This is a listing of the feature requirements for this JSON Schema linter.
 ## Schema tests
 
 * Problems with JSON
-    * Syntax errors
-    * Duplicate keys
-    * Unicode problems
-    * Correct line endings
+	* Syntax errors
+	* Duplicate keys
+	* Unicode problems
+	* Correct line endings
+	* Consistent indents
 * Verify known `"$schema"` & adherance to meta-schema
 * Verify URIrefs are consistent
+* Verify JSON paths refer to $defs/definitions
 * Verify long-lived HTTP headers for remotely requested documents (if hyper-schema)
+* Verify "format" is known and matches "pattern"
 * Check for redundant keywords
-    * keywords that don't fall in the listed `"type"`
-    * validation keywords used with `"enum"`
-    * mutually exclusive keywords (empty `"oneOf"`/`"anyOf"`, `"maximum"` lower than `"minimum"`, etc)
+	* keywords that don't fall in the listed `"type"`
+	* validation keywords used with `"enum"`
+	* mutually exclusive keywords (empty `"oneOf"`/`"anyOf"`, `"maximum"` lower than `"minimum"`, etc)
+	* keywords that can be factored out of subschemas
+	* Also check inline schemas
 * relative URIRefs used without a URI base somewhere in the document
 * References to paths where a schema isn't expected
 * Unknown keywords
 * Infinite dereferencing loops (two references pointing to each other)
+* Style checking
+	* particular indent style
+	* particular line ending
+	* naming conventions for property names
+	* naming conventions for schema URIs
