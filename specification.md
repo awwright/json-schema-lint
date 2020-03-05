@@ -13,8 +13,8 @@ This is a listing of the feature requirements for this JSON Schema linter.
 * Specify classes of errors:
     * fatal: prevents instances from being validates (includes syntax errors)
     * error: legal usage with no good reason for use (schemas that are always invalid, redundant keywords)
-    * warning: nonportable behavior (different behavior between operating systems, etc), unknown keywords
-    * info: problems not likely to impact validation, e.g. adherance to naming conventions
+    * warning: non-portable behavior (different behavior between operating systems, etc), unknown keywords
+    * info: problems not likely to impact validation, e.g. adherence to naming conventions
     * compat: usage that is not reverse- and/or forward-compatible
 
 ## Schema tests
@@ -25,7 +25,7 @@ This is a listing of the feature requirements for this JSON Schema linter.
 	* Unicode problems
 	* Correct line endings
 	* Consistent indents
-* Verify known `"$schema"` & adherance to meta-schema
+* Verify known `"$schema"` & adherence to meta-schema
 * Verify URIrefs are consistent
 * Verify JSON paths refer to $defs/definitions
 * Verify long-lived HTTP headers for remotely requested documents (if hyper-schema)
