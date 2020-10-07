@@ -31,6 +31,7 @@ This is a listing of the feature requirements for this JSON Schema linter.
 * Verify long-lived HTTP headers for remotely requested documents (if hyper-schema)
 * Verify "format" is known and matches "pattern"
 * Check for ECMA-262-compatible regular expression in "pattern" & "patternProperties"
+	* Check for features not supported on other platforms, or features in dialects not supported by ECMA-262
 * Check for redundant keywords
 	* keywords that don't fall in the listed `"type"`
 	* validation keywords used with `"enum"`
